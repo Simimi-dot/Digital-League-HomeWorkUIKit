@@ -46,6 +46,8 @@ class CustomViewController: UIViewController {
         return label
     }()
     
+
+    
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -54,12 +56,12 @@ class CustomViewController: UIViewController {
         configureCustomView()
     }
     
-    
 }
 
 // MARK: - Extension
 
 extension CustomViewController {
+    
     private func configureCustomView() {
         view.backgroundColor = .darkGray
         
@@ -88,16 +90,5 @@ extension CustomViewController {
             customValidateLabel.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: -16)
         ])
     }
-    
-//    @objc
-//    private func nameValidate() {
-//        let regExString = "[A-Za-zА-ЯЁа-яё-]{2,}+\\s{1}+[A-Za-zА-ЯЁа-яё-]{2,}"
-//        let predicate = NSPredicate(format: "SELF MATCHES[c] %@", regExString)
-//        let isValid = predicate.evaluate(with: nameTextField.text)
-//
-//        nameValidateLabel.text = isValid ? "Валидация прошла успешно" : "В поле ошибка"
-//        nameValidateLabel.textColor = isValid ? .systemGreen : .systemRed
-//    }
-    
     
 }

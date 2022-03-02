@@ -15,6 +15,7 @@
 		063A180C27CF7C840033CDC2 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A180B27CF7C840033CDC2 /* NameViewController.swift */; };
 		063A180E27CF86BB0033CDC2 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A180D27CF86BB0033CDC2 /* EmailViewController.swift */; };
 		063A181227CFA8F10033CDC2 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A181127CFA8F10033CDC2 /* CustomViewController.swift */; };
+		063A181427CFD0D30033CDC2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A181327CFD0D30033CDC2 /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		063A180B27CF7C840033CDC2 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		063A180D27CF86BB0033CDC2 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		063A181127CFA8F10033CDC2 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		063A181327CFD0D30033CDC2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				063A181127CFA8F10033CDC2 /* CustomViewController.swift */,
 				063A180B27CF7C840033CDC2 /* NameViewController.swift */,
 				063A180D27CF86BB0033CDC2 /* EmailViewController.swift */,
+				063A181327CFD0D30033CDC2 /* CustomView.swift */,
 				063A180027CF783E0033CDC2 /* Assets.xcassets */,
 				063A180227CF783E0033CDC2 /* LaunchScreen.storyboard */,
 				063A180527CF783E0033CDC2 /* Info.plist */,
@@ -146,6 +149,7 @@
 				063A17FC27CF783C0033CDC2 /* ViewController.swift in Sources */,
 				063A17F827CF783C0033CDC2 /* AppDelegate.swift in Sources */,
 				063A17FA27CF783C0033CDC2 /* SceneDelegate.swift in Sources */,
+				063A181427CFD0D30033CDC2 /* CustomView.swift in Sources */,
 				063A181227CFA8F10033CDC2 /* CustomViewController.swift in Sources */,
 				063A180C27CF7C840033CDC2 /* NameViewController.swift in Sources */,
 				063A180E27CF86BB0033CDC2 /* EmailViewController.swift in Sources */,
