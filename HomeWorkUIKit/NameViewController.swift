@@ -8,8 +8,8 @@
 import UIKit
 
 // MARK: - Class
+
 class NameViewController: UIViewController {
-    
     
     // MARK: - Properties
     
@@ -26,8 +26,6 @@ class NameViewController: UIViewController {
         super.viewDidLoad()
         
         customView.customButton.addTarget(self, action: #selector(nameValidate), for: .touchUpInside)
-        
-//        configureNameView()
     }
     
 }
@@ -41,7 +39,7 @@ extension NameViewController {
         let regExString = "[A-Za-zА-ЯЁа-яё-]{2,}+\\s{1}+[A-Za-zА-ЯЁа-яё-]{2,}"
         let predicate = NSPredicate(format: "SELF MATCHES[c] %@", regExString)
         let isValid = predicate.evaluate(with: customView.customTextField.text)
-
+        
         customView.customValidateLabel.text = isValid ? "Валидация прошла успешно" : "В поле ошибка"
         customView.customValidateLabel.textColor = isValid ? .systemGreen : .systemRed
     }
