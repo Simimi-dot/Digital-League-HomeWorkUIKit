@@ -7,8 +7,17 @@
 
 import UIKit
 
+// MARK: - Enum
+enum PlaceHolder: String {
+    case name = "Введите имя и фамилию..."
+    case email = "Введите email..."
+}
+
+// MARK: - Class
 class CustomView: UIView {
-        
+    
+    // MARK: - Properties
+    
     lazy var customView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +29,6 @@ class CustomView: UIView {
     lazy var customTextField: UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Пустое поле..."
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .systemBackground
         return textField
@@ -43,8 +51,48 @@ class CustomView: UIView {
         return label
     }()
     
+    // MARK: - Init
+    
+    init(placeHolder: PlaceHolder) {
+        super.init(frame: .zero)
+        self.customTextField.placeholder = placeHolder.rawValue
+        configure()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: -  Method
+    
+    func configure() {
+        self.backgroundColor = .darkGray
+        
+        self.addSubview(customView)
+        
+        self.addSubview(customTextField)
+        self.addSubview(customButton)
+        self.addSubview(customValidateLabel)
+        
+        NSLayoutConstraint.activate([
+            customView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 250),
+            customView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            customView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            
+            customTextField.topAnchor.constraint(equalTo: customView.topAnchor, constant: 16),
+            customTextField.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 16),
+            customTextField.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -16),
+            
+            customButton.topAnchor.constraint(equalTo: customTextField.bottomAnchor, constant: 16),
+            customButton.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 16),
+            customButton.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -16),
+            
+            customValidateLabel.topAnchor.constraint(equalTo: customButton.bottomAnchor, constant: 16),
+            customValidateLabel.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 16),
+            customValidateLabel.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -16),
+            customValidateLabel.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: -16)
+        ])
+    }
+    
 }
+
