@@ -18,7 +18,7 @@ class CustomView: UIView {
     
     // MARK: - Properties
     
-    lazy var customView: UIView = {
+    lazy private var customView: UIView = {
         var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray
@@ -57,6 +57,7 @@ class CustomView: UIView {
         super.init(frame: .zero)
         self.customTextField.placeholder = placeHolder.rawValue
         configure()
+        keyboard()
     }
     
     required init?(coder: NSCoder) {
@@ -65,7 +66,7 @@ class CustomView: UIView {
     
     // MARK: -  Method
     
-    func configure() {
+    private func configure() {
         self.backgroundColor = .darkGray
         
         self.addSubview(customView)
@@ -94,5 +95,36 @@ class CustomView: UIView {
         ])
     }
     
+    private func keyboard() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.frame.origin.y == 0 {
+                self.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
+        if self.frame.origin.y != 0 {
+            self.frame.origin.y = 0
+        }
+    }
+    
 }
-
